@@ -1,0 +1,135 @@
+{
+  "kind": "build_request",
+  "title": "Build jewelry e-commerce platform with admin panel and carousel management",
+  "projectName": "Aurelie Gold & Diamonds",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement three product categories: 22K Gold, 18K Gold, and 9K Gold. Update the product catalog data model to support these categories and ensure all product management flows use these categories.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "22K Gold, 18K Gold, 9k Gold"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product model includes category field supporting 22K Gold, 18K Gold, and 9K Gold",
+        "Product filter/search allows filtering by these three categories",
+        "Admin panel product forms show these three category options"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a running banner positioned directly below the header that displays 'Lab Grown Diamonds' content. The banner should be visible on all pages and use the site's metallic gold styling theme.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Just below the header keep a running banner with content Lab Grown Diamonds"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Banner appears immediately below header on all pages",
+        "Banner displays 'Lab Grown Diamonds' text",
+        "Banner styling matches the gold theme"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Enhance admin panel to include full product management (add/edit/delete products), inventory management capabilities, order viewing functionality, and carousel management with URL configuration for each carousel item.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "for admin control add/edit/delete products, manage inventory, view orders, add/edit carousel with URL"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can add, edit, and delete products",
+        "Admin can manage product inventory levels",
+        "Admin can view all orders",
+        "Admin can add, edit, and delete carousel items with URL links"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Integrate Google Pay UPI for checkout and payment processing. Replace or enhance existing payment flow to support UPI-based transactions through Google Pay.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "for checkout and payment integrate gpay UPI"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Checkout page displays Google Pay UPI payment option",
+        "UPI payment flow is integrated and functional",
+        "Order confirmation occurs after successful UPI payment"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a homepage carousel positioned in the body section that displays images uploaded and managed through the admin control panel. The carousel should support multiple images with navigation controls.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "carousel should display the images uploaded from admin control. Positioned in home page body"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Carousel appears in homepage body section",
+        "Carousel displays admin-uploaded images",
+        "Carousel includes navigation controls (prev/next)",
+        "Admin can upload images for carousel through admin panel"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Match the design styling from the Aurelie Fine Jewellery reference site (https://aurelie-fine-jewellery-wgl.caffeine.xyz/admin) including header layout, footer layout, and background color scheme throughout the application.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Replicate the product category, features of Admin control,  Header and footer, background colour"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Header layout matches reference site styling",
+        "Footer layout matches reference site styling",
+        "Background colors match reference site theme",
+        "Overall visual consistency with reference site"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use existing backend main.mo single-actor architecture",
+    "Preserve existing authentication flow using Internet Identity",
+    "Maintain existing admin email detection (arjun.tapse@gmail.com)",
+    "Keep existing product, order, and cart data structures compatible"
+  ],
+  "nonGoals": [
+    "Migrating to a different authentication system",
+    "Supporting payment methods other than Google Pay UPI",
+    "Adding product categories beyond 22K, 18K, and 9K Gold",
+    "Implementing real-time inventory syncing with external systems"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

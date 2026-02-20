@@ -1,0 +1,191 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Frontend implementation for jewelry e-commerce with admin panel and carousel management",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Update product catalog UI to support three material categories: 22K Gold, 18K Gold, and 9K Gold",
+      "acceptanceCriteria": [
+        "Product model includes category field supporting 22K Gold, 18K Gold, and 9K Gold",
+        "Product filter/search allows filtering by these three categories",
+        "Admin panel product forms show these three category options"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/AddProductModal.tsx",
+          "operation": "modify",
+          "description": "Update material selection dropdown to display the three gold types (22K Gold, 18K Gold, 9K Gold) with proper labels. Map these UI labels to the backend Material enum values (_22K_gold, _18K_gold, _9K_gold)."
+        },
+        {
+          "path": "frontend/src/components/admin/EditProductModal.tsx",
+          "operation": "modify",
+          "description": "Update material selection dropdown to display the three gold types (22K Gold, 18K Gold, 9K Gold) with proper labels. Ensure the current product material is correctly selected when editing. Map UI labels to backend Material enum values."
+        },
+        {
+          "path": "frontend/src/pages/ProductsPage.tsx",
+          "operation": "modify",
+          "description": "Update the material filter dropdown to show three options: 22K Gold, 18K Gold, and 9K Gold with proper labels. Map these to the backend Material enum values when calling filterProductsByMaterial. Update filter UI to match the gold theme."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "modify",
+          "description": "Update product material display to show human-readable labels (22K Gold, 18K Gold, 9K Gold) instead of enum values. Add proper formatting and styling to match the metallic gold theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a running banner below the header displaying 'Lab Grown Diamonds' content with metallic gold styling",
+      "acceptanceCriteria": [
+        "Banner appears immediately below header on all pages",
+        "Banner displays 'Lab Grown Diamonds' text",
+        "Banner styling matches the gold theme"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/RunningBanner.tsx",
+          "operation": "create",
+          "description": "Create a RunningBanner component that displays 'Lab Grown Diamonds' text in a horizontally scrolling or marquee animation. Use dark maroon background (bg-maroon-900) with metallic gold text (text-gold-shimmer). Include CSS animations for smooth continuous scrolling effect."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render the RunningBanner component immediately after the Header component, ensuring it appears on all pages. Position it below the header using appropriate layout structure."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add CSS keyframe animations for the running banner scroll effect. Define smooth horizontal scrolling animation with proper timing and loop behavior to create a continuous marquee effect."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Enhance admin panel with carousel management UI including add/edit/delete carousel items with URL configuration",
+      "acceptanceCriteria": [
+        "Admin can add, edit, and delete products",
+        "Admin can manage product inventory levels",
+        "Admin can view all orders",
+        "Admin can add, edit, and delete carousel items with URL links"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/admin/CarouselManagement.tsx",
+          "operation": "create",
+          "description": "Create a CarouselManagement component for admin dashboard. Display list of carousel items with thumbnail previews, titles, and linked URLs. Include add, edit, and delete buttons for each item. Provide a form modal for uploading images (with preview) and entering URL links. Use ExternalBlob for image uploads with progress tracking. Style with metallic gold theme matching other admin components."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Add a new 'Carousel' tab to the admin dashboard tabs. Wire the CarouselManagement component to display when the carousel tab is selected. Ensure tab styling matches existing product, orders, business info, and analytics tabs with gold theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for carousel operations: useGetCarouselItems (query to fetch all carousel items), useAddCarouselItem (mutation to create new carousel item with image and URL), useUpdateCarouselItem (mutation to edit existing item), useDeleteCarouselItem (mutation to remove item). Include proper cache invalidation on mutations. Use authorization component to ensure admin-only access."
+        },
+        {
+          "path": "frontend/src/components/admin/InventoryManagement.tsx",
+          "operation": "create",
+          "description": "Create an InventoryManagement component that displays a table of all products with their current stock levels. Provide inline editing capability to update stock quantities. Include bulk update functionality. Use updateInventory mutation from useQueries. Style with metallic gold theme and dark maroon backgrounds."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Add an 'Inventory' tab to the admin dashboard. Wire the InventoryManagement component to render when inventory tab is selected. Ensure proper tab navigation and styling consistency."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Integrate Google Pay UPI payment option into checkout flow",
+      "acceptanceCriteria": [
+        "Checkout page displays Google Pay UPI payment option",
+        "UPI payment flow is integrated and functional",
+        "Order confirmation occurs after successful UPI payment"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CheckoutPage.tsx",
+          "operation": "modify",
+          "description": "Add Google Pay UPI payment option to the checkout page. Display a UPI payment button with Google Pay branding. Integrate UPI deep link generation or QR code display for payment. After successful UPI payment callback, trigger order placement. Show payment processing state with loading indicators. Add error handling for failed UPI transactions. Style payment section with metallic gold theme."
+        },
+        {
+          "path": "frontend/src/components/UPIPayment.tsx",
+          "operation": "create",
+          "description": "Create a UPIPayment component that handles Google Pay UPI integration. Generate UPI payment deep links or QR codes with merchant details. Handle payment intent creation and callback processing. Include payment status polling if needed. Provide clear UI for payment instructions and confirmation. Use dark maroon and gold styling."
+        },
+        {
+          "path": "frontend/src/hooks/useUPIPayment.ts",
+          "operation": "create",
+          "description": "Create a custom hook for UPI payment operations. Include functions to generate UPI payment links, handle payment callbacks, verify payment status with backend. Use React Query for state management. Return payment state (idle, processing, success, failed) and handler functions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create homepage carousel displaying admin-uploaded images with navigation controls",
+      "acceptanceCriteria": [
+        "Carousel appears in homepage body section",
+        "Carousel displays admin-uploaded images",
+        "Carousel includes navigation controls (prev/next)",
+        "Admin can upload images for carousel through admin panel"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HomeCarousel.tsx",
+          "operation": "create",
+          "description": "Create a HomeCarousel component that fetches carousel items from backend and displays them with image slides. Include previous/next navigation buttons, auto-play functionality, and pagination dots. Each carousel item should be clickable and navigate to its configured URL. Use ExternalBlob getDirectURL() method to display images. Style with metallic gold controls on dark maroon background. Add smooth transition animations between slides."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Import and render the HomeCarousel component in the body section of the homepage, positioning it prominently after the hero banner and before the feature cards. Ensure proper layout spacing with the gold theme."
+        },
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Verify carousel query hooks (useGetCarouselItems) are properly exported and available for use in HomeCarousel component. Ensure the hook fetches carousel items with images as ExternalBlob and URL links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Update design styling to match Aurelie Fine Jewellery reference site including header, footer, and background colors",
+      "acceptanceCriteria": [
+        "Header layout matches reference site styling",
+        "Footer layout matches reference site styling",
+        "Background colors match reference site theme",
+        "Overall visual consistency with reference site"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Update Header component styling to match reference site layout. Refine navigation structure, logo placement, and authentication controls positioning. Ensure dark maroon background with metallic gold text. Adjust spacing, font sizes, and hover effects to match reference design. Ensure mobile responsive menu matches reference styling."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Update Footer component layout and styling to match reference site. Reorganize sections for brand info, quick links, and contact details. Refine column layout and spacing. Ensure dark maroon background with metallic gold text. Add any missing sections or links present in reference design. Adjust font sizes and spacing to match reference footer."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Review and update global background color variables and body styling to match reference site color scheme. Ensure dark maroon backgrounds and metallic gold text are applied consistently. Refine any CSS custom properties for colors, spacing, or typography to achieve visual consistency with reference design."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Update Tailwind configuration to refine maroon and gold color palette to match reference site exactly. Adjust color shades, shimmer effects, and custom theme values. Ensure all color tokens align with reference design system."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update main App component background styling and layout structure to match reference site. Ensure consistent dark maroon background throughout the application. Verify proper spacing between header, banner, content, and footer sections."
+        }
+      ]
+    }
+  ]
+}

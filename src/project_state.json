@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Jewelry e-commerce platform with 22K/18K/9K Gold categories, running banner for Lab Grown Diamonds, admin panel for product/inventory/order management and carousel control, Google Pay UPI integration, and homepage carousel with admin-uploaded images",
+  "architectural_notes": [
+    "E-commerce platform for jewelry with product categorization by gold karat",
+    "Admin panel for full product lifecycle management",
+    "Google Pay UPI payment integration required",
+    "Homepage carousel system with admin upload capability",
+    "Design reference: https://aurelie-fine-jewellery-wgl.caffeine.xyz/admin"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-three-product-categories-22k-gold-18k-gold-and-9k-gold-update-the-product-catalog-data-model-to-support-these-categories-and-ensure-all-product-management-flows-use-these-categories",
+      "title": "Implement three product categories: 22K Gold, 18K Gold, and 9K Gold. Update the product catalog data model to support these categories and ensure all product management flows use these categories.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-running-banner-positioned-directly-below-the-header-that-displays-lab-grown-diamonds-content-the-banner-should-be-visible-on-all-pages-and-use-the-site-s-metallic-gold-styling-theme",
+      "title": "Add a running banner positioned directly below the header that displays 'Lab Grown Diamonds' content. The banner should be visible on all pages and use the site's metallic gold styling theme.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-admin-panel-to-include-full-product-management-add-edit-delete-products-inventory-management-capabilities-order-viewing-functionality-and-carousel-management-with-url-configuration-for-each-carousel-item",
+      "title": "Enhance admin panel to include full product management (add/edit/delete products), inventory management capabilities, order viewing functionality, and carousel management with URL configuration for each carousel item.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-integrate-google-pay-upi-for-checkout-and-payment-processing-replace-or-enhance-existing-payment-flow-to-support-upi-based-transactions-through-google-pay",
+      "title": "Integrate Google Pay UPI for checkout and payment processing. Replace or enhance existing payment flow to support UPI-based transactions through Google Pay.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-homepage-carousel-positioned-in-the-body-section-that-displays-images-uploaded-and-managed-through-the-admin-control-panel-the-carousel-should-support-multiple-images-with-navigation-controls",
+      "title": "Create a homepage carousel positioned in the body section that displays images uploaded and managed through the admin control panel. The carousel should support multiple images with navigation controls.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-match-the-design-styling-from-the-aurelie-fine-jewellery-reference-site-https-aurelie-fine-jewellery-wgl-caffeine-xyz-admin-including-header-layout-footer-layout-and-background-color-scheme-throughout-the-application",
+      "title": "Match the design styling from the Aurelie Fine Jewellery reference site (https://aurelie-fine-jewellery-wgl.caffeine.xyz/admin) including header layout, footer layout, and background color scheme throughout the application.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Product categories: 22K Gold, 18K Gold, 9K Gold",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Running banner below header with 'Lab Grown Diamonds' content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Admin panel: add/edit/delete products, manage inventory, view orders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Admin control: add/edit carousel with URL configuration",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Google Pay UPI integration for checkout and payment",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Homepage carousel displaying admin-uploaded images in body section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Design matching Aurelie Fine Jewellery reference (header, footer, background color)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Aurelie Gold & Diamonds",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

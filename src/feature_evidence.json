@@ -1,0 +1,148 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-three-product-categories-22k-gold-18k-gold-and-9k-gold-update-the-product-catalog-data-model-to-support-these-categories-and-ensure-all-product-management-flows-use-these-categories",
+      "featureTitle": "Implement three product categories: 22K Gold, 18K Gold, and 9K Gold. Update the product catalog data model to support these categories and ensure all product management flows use these categories.",
+      "files": [
+        "frontend/src/components/admin/AddProductModal.tsx",
+        "frontend/src/components/admin/EditProductModal.tsx",
+        "frontend/src/pages/ProductDetailPage.tsx",
+        "frontend/src/pages/ProductsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-running-banner-positioned-directly-below-the-header-that-displays-lab-grown-diamonds-content-the-banner-should-be-visible-on-all-pages-and-use-the-site-s-metallic-gold-styling-theme",
+      "featureTitle": "Add a running banner positioned directly below the header that displays 'Lab Grown Diamonds' content. The banner should be visible on all pages and use the site's metallic gold styling theme.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/RunningBanner.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-enhance-admin-panel-to-include-full-product-management-add-edit-delete-products-inventory-management-capabilities-order-viewing-functionality-and-carousel-management-with-url-configuration-for-each-carousel-item",
+      "featureTitle": "Enhance admin panel to include full product management (add/edit/delete products), inventory management capabilities, order viewing functionality, and carousel management with URL configuration for each carousel item.",
+      "files": [
+        "frontend/src/components/admin/CarouselManagement.tsx",
+        "frontend/src/components/admin/InventoryManagement.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-integrate-google-pay-upi-for-checkout-and-payment-processing-replace-or-enhance-existing-payment-flow-to-support-upi-based-transactions-through-google-pay",
+      "featureTitle": "Integrate Google Pay UPI for checkout and payment processing. Replace or enhance existing payment flow to support UPI-based transactions through Google Pay.",
+      "files": [
+        "frontend/src/pages/CheckoutPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-homepage-carousel-positioned-in-the-body-section-that-displays-images-uploaded-and-managed-through-the-admin-control-panel-the-carousel-should-support-multiple-images-with-navigation-controls",
+      "featureTitle": "Create a homepage carousel positioned in the body section that displays images uploaded and managed through the admin control panel. The carousel should support multiple images with navigation controls.",
+      "files": [
+        "frontend/src/components/HomeCarousel.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-match-the-design-styling-from-the-aurelie-fine-jewellery-reference-site-https-aurelie-fine-jewellery-wgl-caffeine-xyz-admin-including-header-layout-footer-layout-and-background-color-scheme-throughout-the-application",
+      "featureTitle": "Match the design styling from the Aurelie Fine Jewellery reference site (https://aurelie-fine-jewellery-wgl.caffeine.xyz/admin) including header layout, footer layout, and background color scheme throughout the application.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "http-outcalls@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "stripe@3.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
